@@ -75,7 +75,7 @@ displayOutput();
 
 function clicked (el) {
   for (let i = 0; i < calList.length; i++) {
-    calList[i].style.backgroundColor = "white";
+    calList[i].style.backgroundColor = "#ced4da";
   }
   el.style.backgroundColor = "yellow";
 }
@@ -106,7 +106,7 @@ function mainClick (el) {
 
 
 
-  
+
 
   function clickEql () {
     console.log("Eql")
@@ -117,21 +117,27 @@ function mainClick (el) {
 
   switch (setCal) {
     case "÷":
+    console.log("switch getin")
      a = a/b
      console.log("re a", a)
      break
-    case "x":
+    case "×":
+    console.log("switch getin")
      a = a*b
      console.log("re a", a)
      break
-    case "-":
+    case "−":
+    console.log("switch getin")
       a = a-b
       console.log("re a", a)
       break
     case "+":
+    console.log("switch getin")
       a = a+b
       console.log("re a", a)
       break
+      default :
+      console.log("fail")
   }
   display1.textContent = a.toString()
 }
