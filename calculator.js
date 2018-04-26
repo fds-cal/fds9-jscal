@@ -1,30 +1,54 @@
 // 아름다운 코드
-let display1 = document.querySelector('.display');
-let number = 
-[document.querySelector('.num-0'),document.querySelector('.num-1'),document.querySelector('.num-2'),
- document.querySelector('.num-3'),document.querySelector('.num-4'),document.querySelector('.num-5'),
- document.querySelector('.num-6'),document.querySelector('.num-7'),document.querySelector('.num-8'),
- document.querySelector('.num-9'),document.querySelector('.num-dot')];
 
-//숫자 눌러주는것은 디스플레이에 보여주는 로직
-function displayOutput(){
-  number.forEach((el,index) => {
-    if(index !== 10){
-    el.addEventListener('click',() => {
-      display1.textContent += index.toString();
-      display1.textContent = parseFloat(display1.textContent).toString();
-    })
+let a = 0;
+let b = 0;
+
+let calList = document.querySelectorAll(".op-main")
+let dot  = document.querySelector(".num-dot")
+let pm = document.querySelector(".op-neg")
+let per = document.querySelector(".op-percent")
+let ac = document.querySelector(".op-ac")
+let dis = document.querySelector(".display")
+
+
+
+function clicked () {
+  for (let i = 0; i < calList.length; i++) {
+    calList[i].style.backgroundColor = white;
   }
-    else{
-      el.addEventListener('click',() => {
-      display1.textContent += '.';
-    })
-    }
-  })
+  this.style.backgroundColor = yellow;
+}
+
+
+
+function mainClick () {
+  setCal = this.textContent
+  a = parseFloat(display1.textContent)
+  }
+
+
+  function clickEql () {
+    b = parseFloat(diplay1.textContent)
+  switch (setCal) {
+    case "÷":
+     return a = a/b
+    case "x":
+     return a = a*b
+    case "-":
+     return a = a-b
+    case "+":
+     return a = a+b
+  }
 }
 
 
 
 
-displayOutput();
+function percenter () {
+  display1.textContent.includes("%") ? (parseFloat(display1.textContent)/100).toString(): 
+  ((parseFloat(display1.textContent)*100).toString() + "%")
+}
 
+function pmFunc () {
+(parseFloat(display1.textContent)*(-1)).toString()
+}
